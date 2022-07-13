@@ -1,17 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.params import Depends
-
-#from fastapi_crudrouter import OrmarCRUDRouter
 
 #from app.core.config import settings
 #from app.db import database
 #from app.utils.dependencies import verify_token
 
-#from app.models.reference import PimQuery20_5, PimQuery29
-#from app.routers import pim_ean
 from app.routes import pic_rights, ping
-#from app.routers import icecat_index
 
 
 
@@ -46,7 +40,7 @@ app = FastAPI()
 
 app.include_router(
     pic_rights.router,
-    tags=["Generate copyrights request docs"]
+    tags=["Generate copyrights request documents"]
 )
 
 app.include_router(ping.router)
